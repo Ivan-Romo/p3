@@ -1,0 +1,8 @@
+Juntar proyectos
+ - que en la pestalla de logeao puedas empezar a jugar
+
+cosas añadir p1 (2fa, verificaio correu, you've pwned)
+
+latencia
+
++2 jugadores
