@@ -1,7 +1,6 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-// Ajustar el tamaño del canvas
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -17,10 +16,8 @@ const keys = {
 let mouseX = canvas.width / 2;
 let mouseY = canvas.height / 2;
 
-// Identificadores para el jugador y juego
 let playerId, gameId;
 
-// Definir el tanque
 const player = {
   id: null,
   x: canvas.width / 2,
@@ -32,10 +29,8 @@ const player = {
   bullets: []
 };
 
-// Otros jugadores en la partida
 let otherPlayers = {};
 
-// Definir la bala
 function Bullet(x, y, angle, id) {
   this.id = id
   this.x = x;
@@ -45,13 +40,11 @@ function Bullet(x, y, angle, id) {
   this.angle = angle;
 }
 
-// Actualizar posición de la bala
 Bullet.prototype.update = function () {
   this.x += this.speed * Math.cos(this.angle);
   this.y += this.speed * Math.sin(this.angle);
 };
 
-// Detectar colisiones para eliminar las balas fuera de la pantalla
 Bullet.prototype.isOffScreen = function () {
   return (
     this.x < 0 ||
@@ -61,7 +54,6 @@ Bullet.prototype.isOffScreen = function () {
   );
 };
 
-// Dibujar el tanque
 function drawPlayer(playerObj) {
   ctx.save();
   ctx.translate(playerObj.x, playerObj.y);
@@ -71,13 +63,11 @@ function drawPlayer(playerObj) {
   ctx.arc(0, 0, playerObj.radius, 0, Math.PI * 2);
   ctx.fill();
 
-  // Dibujar el cañón
   ctx.fillStyle = 'black';
   ctx.fillRect(0, -5, 30, 10);
   ctx.restore();
 }
 
-// Dibujar una bala
 function drawBullet(bullet) {
   ctx.fillStyle = 'black';
   ctx.beginPath();
@@ -85,40 +75,29 @@ function drawBullet(bullet) {
   ctx.fill();
 }
 
-// Función para actualizar el estado del juego
 function update() {
-  // Movimiento del jugador
   if (keys.w) player.y -= player.speed;
   if (keys.s) player.y += player.speed;
   if (keys.a) player.x -= player.speed;
   if (keys.d) player.x += player.speed;
 
-  // Girar el tanque hacia el ratón
   const dx = mouseX - player.x;
   const dy = mouseY - player.y;
   player.angle = Math.atan2(dy, dx);
 
-  // Actualizar posición de las balas del jugador
   player.bullets.forEach((bullet, index) => {
     bullet.update();
     if (bullet.isOffScreen()) {
-      player.bullets.splice(index, 1); // Eliminar la bala si sale de la pantalla
+      player.bullets.splice(index, 1);
     }
   });
-
-  // Actualizar balas de otros jugadores
-
 }
 
-// Función para renderizar el juego
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Dibujar al propio jugador
   drawPlayer(player);
   player.bullets.forEach(drawBullet);
 
-  // Dibujar otros jugadores
   Object.values(otherPlayers).forEach(playerObj => {
     if (playerObj.id !== player.id) {
       drawPlayer(playerObj);
@@ -126,7 +105,6 @@ function render() {
     }
   });
 
-  // Dibujar el cuadrado si es visible
   if (square && square.is_visible == 1) {
     drawSquare(square.x, square.y);
   }
@@ -143,19 +121,18 @@ function updateScores(data) {
 }
 
 
-let square = null; // Variable para almacenar el cuadrado
+let square = null; 
 
 function drawSquare(x, y) {
   if (square && square.is_visible == 1) {
     ctx.fillStyle = 'yellow';
-    ctx.fillRect(x - 25, y - 25, 50, 50);  // Dibujar el cuadrado amarillo
+    ctx.fillRect(x - 25, y - 25, 50, 50); 
   }
 }
 
 let shownBullets = [];
 
 function updateBullets() {
-  // Recibir las balas desde el servidor
   fetch(`server.php?action=getBullets&gameId=${gameId}`)
     .then(response => response.json())
     .then(data => {
@@ -163,89 +140,120 @@ function updateBullets() {
       data.bullets.forEach(bulletData => {
         console.log(bulletData.bullet_id);
 
-        // Verificar si la bala ya está en el array shownBullets
+        
         const bulletExists = player.bullets.some(b => b.id === bulletData.bullet_id);
         const alreadyShown = shownBullets.includes(bulletData.bullet_id);
 
-        // Solo crear la bala si no existe y no ha sido registrada antes
         if (!bulletExists && !alreadyShown) {
           const bullet = new Bullet(bulletData.x, bulletData.y, bulletData.direction, bulletData.bullet_id);
           player.bullets.push(bullet);
 
-          // Añadir el id de la bala al array shownBullets
           shownBullets.push(bulletData.bullet_id);
         }
       });
     });
 }
-// Enviar el estado del jugador al servidor
+
+let latency = 0; // Variable global para almacenar la latencia
+
 function sendGameState() {
+  const latencyStart = Date.now(); // Inicia el temporizador de latencia
+
   const data = {
-    playerId: playerId,
-    gameId: gameId,
-    x: player.x,
-    y: player.y,
-    angle: player.angle,
-    bullets: player.bullets
+      playerId: playerId,
+      gameId: gameId,
+      x: player.x,
+      y: player.y,
+      angle: player.angle,
+      bullets: player.bullets,
   };
 
   fetch('server.php?action=update', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => {
+      const latencyEnd = Date.now();
+      latency = latencyEnd - latencyStart; // Calcula la latencia en ms y la guarda en la variable global
+      
+      if (!response.ok) {
+          throw new Error('Error en la respuesta del servidor');
+      }
+
+      return response.json(); // Asegura que la respuesta sea JSON
+  })
+  .then(() => {
+      console.log("Respuesta recibida y JSON procesado");
+      updateLatencyOnServer(latency); // Llama a la función para actualizar la latencia en la base de datos
+  })
+  .catch(error => {
+      console.error('Error en la solicitud de sendGameState:', error);
   });
+}
+
+function updateLatencyOnServer(latency) {
+    // Envía la latencia al servidor para almacenar en la base de datos
+    
+    const data = {
+        playerId: playerId,
+        gameId: gameId,
+        latency: latency
+    };
+
+    fetch('server.php?action=updateLatency', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).catch(error => {
+        console.error('Error al enviar la latencia:', error);
+    });
 }
 
 let playerScore = 0;
 let enemyScore = 0;
 
-// Recibir el estado del juego desde el servidor
 function getGameState() {
   fetch(`server.php?action=status&gameId=${gameId}`)
     .then(response => response.json())
     .then(data => {
-      // Actualizar los otros jugadores
       otherPlayers = data.otherPlayers;
 
-      // Información del cuadrado
       square = data.square;
 
-      // Actualizar puntuaciones
       updateScores(data);
 
       Object.keys(otherPlayers).forEach(playerId => {
-        otherPlayers[playerId].radius = 20; // Tamaño estándar de los tanques
-        otherPlayers[playerId].color = 'red'; // Color de los tanques de otros jugadores
+        otherPlayers[playerId].radius = 20; 
+        otherPlayers[playerId].color = 'red'; 
         otherPlayers[playerId].id = playerId;
 
-        // Convertir las balas recibidas en instancias de Bullet
         otherPlayers[playerId].bullets = otherPlayers[playerId].bullets.map(bulletData =>
           new Bullet(bulletData.x, bulletData.y, bulletData.direction)
         );
       });
     });
 }
-// Bucle principal del juego
 function gameLoop() {
   update();
   render();
   requestAnimationFrame(gameLoop);
 }
 
-// Disparar una bala al hacer clic
 canvas.addEventListener('mousedown', function () {
-  const bullet = new Bullet(player.x, player.y, player.angle, player.id);  // Asignar el id del jugador
+  const bullet = new Bullet(player.x, player.y, player.angle, player.id); 
   player.bullets.push(bullet);
 
-  // Informar al servidor de la bala disparada
   const bulletData = {
     gameId: gameId,
-    playerId: playerId,  // Enviar también el playerId
+    playerId: playerId, 
     x: bullet.x,
     y: bullet.y,
-    direction: bullet.angle
+    direction: bullet.angle,
   };
 
   fetch('server.php?action=shoot', {
@@ -254,16 +262,20 @@ canvas.addEventListener('mousedown', function () {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(bulletData)
+  }).then(response => { 
+    if (!response.ok) {
+      console.error('Error al enviar los datos de la bala');
+    }
+  }).catch(error => {
+    console.error('Error en la solicitud de disparo:', error);
   });
 });
 
-// Actualizar posición del ratón
 canvas.addEventListener('mousemove', function (event) {
   mouseX = event.clientX;
   mouseY = event.clientY;
 });
 
-// Control de teclas
 window.addEventListener('keydown', function (e) {
   if (e.key === 'w') keys.w = true;
   if (e.key === 'a') keys.a = true;
@@ -291,7 +303,6 @@ function cleanBullets() {
     });
 }
 
-// Unirse al juego
 function joinGame() {
   fetch('server.php?action=join')
     .then(response => response.json())
@@ -300,13 +311,12 @@ function joinGame() {
       gameId = data.gameId;
       player.id = playerId;
 
-      // Comenzar a recibir el estado del juego regularmente
-      setInterval(getGameState, 100); // Obtener el estado del juego cada 200 ms
-      setInterval(updateBullets, 100); // Actualizar balas cada 200 ms
+      setInterval(getGameState, 100); 
+      setInterval(updateBullets, 100);
 
-      // Enviar el estado del jugador al servidor cada 500 ms
+
       setInterval(sendGameState, 100);
-      setInterval(cleanBullets, 200); // Llamada cada 200 ms (5 veces por segundo)
+      setInterval(cleanBullets, 200); 
     });
 }
 
