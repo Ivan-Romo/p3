@@ -70,6 +70,13 @@ if (isset($parameters['page'])) {
     else if ($parameters['page'] == 'forgotten') {
         $template = 'plantilla_forgotten';
     } else if ($parameters['page'] == 'game') {
+        if (!isset($_COOKIE['user'])) {
+            $template = 'plantilla_home';
+            $html = file_get_contents($template . '.html', true);
+            $html = str_replace(array_keys($configuration), array_values($configuration), $html);
+            echo $html;
+            exit();
+        }
         $template = '../public/index';
     } else if ($parameters['page'] == 'reset_password') {
         $template = 'plantilla_reset_password';
