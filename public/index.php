@@ -44,6 +44,27 @@ function create_pbkdf2_hash($password)
     );
 }
 
+function check_password_pwned($password) {
+    $hash = strtoupper(sha1($password));
+    $prefix = substr($hash, 0, 5);
+    $suffix = substr($hash, 5);
+
+    // URL para verificar el prefijo del hash en Pwned Passwords
+    $url = "https://api.pwnedpasswords.com/range/$prefix";
+
+    // Usamos cURL para realizar la solicitud HTTP
+    $response = file_get_contents($url);
+    foreach (explode("\n", $response) as $line) {
+        list($hash, $count) = explode(":", trim($line));
+        if ($hash === $suffix) {
+            return true; 
+        }
+    }
+    return false; 
+}
+
+
+
 $parameters = $_GET;
 //si hi ha cookie
 if (isset($_COOKIE['user'])) {
@@ -97,10 +118,12 @@ if (isset($parameters['page'])) {
         $recaptcha_secret_key = '6Le5PlkqAAAAAJpSy9qZACJ7pjMmKTd0j8fKUZT3';
         $response = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret_key . '&response=' . $recaptcha_response);
         $response_data = json_decode($response);
-
+        $pwned_count = check_password_pwned($_POST['user_password']);
         if (!$response_data->success) {
             $configuration['{FEEDBACK}'] = '<mark>ERROR: Verificació CAPTCHA fallida. Torna-ho a intentar.</mark>';
-        } else {
+        }elseif($pwned_count) {
+            $configuration['{FEEDBACK}'] = '<mark>ERROR: La contrasenya ha estat exposada en bretxes de seguretat. Utilitza una contrasenya més segura.</mark>';
+        }else {
             $db = new PDO($db_connection);
 
             $sql = 'SELECT COUNT(*) FROM users WHERE user_name = :user_name';
