@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ca" color-mode="user">
+<head>
+    <meta charset="utf-8">
+    <title>{SITE_NAME} :: Verificació</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mvp.css">
+    <link rel="stylesheet" href="el_meu.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1><a href="/">{SITE_NAME}</a></h1>
+            <div>{FEEDBACK}</div>
+        </header>
+        <section>
+            <form method="POST" action="/">
+                <header>
+                    <h2>Verificació de dos factors</h2>
+                </header>
+                <label for="verification_code">Codi de verificació</label>
+                <input id="verification_code" type="text" name="verification_code" required />
+                <input type="submit" name="verify_code" value="Verificar" />
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -87,6 +87,9 @@ if (isset($parameters['page'])) {
         $configuration['{LOGIN_USERNAME}'] = '';
     }else if($parameters['page'] == 'verify'){
         $template = 'plantilla_verify';
+    }
+    else if($parameters['page'] == 'verify2FA'){
+        $template = 'plantilla_verify2FA';
     } 
     else if ($parameters['page'] == 'forgotten') {
         $template = 'plantilla_forgotten';
@@ -207,22 +210,62 @@ if (isset($parameters['page'])) {
     $query->bindValue(':user_name', $_POST['user_name']);
     $query->execute();
     $result_row = $query->fetchObject();
+    
     if ($result_row) {
         $db_hashed_password = create_pbkdf2_hash($_POST['user_password']);
         if ($db_hashed_password === $result_row->user_password) {
-            $configuration['{FEEDBACK}'] = '"Sessió" iniciada com <b>' . htmlentities($_POST['user_name']) . '</b>';
-            $configuration['{LOGIN_LOGOUT_TEXT}'] = 'Tancar "sessió"';
-            $configuration['{LOGIN_LOGOUT_URL}'] = '/?page=logout';
-            //afegim la cookie
-            setcookie('user', $_POST['user_name'], time() + (86400 * 30), "/");
-            $template = 'plantilla_loged';
+            // Generar código de verificación de 6 dígitos y guardarlo en la sesión
+            $verification_code = rand(100000, 999999);
+            $_SESSION['verification_code'] = $verification_code;
+            $_SESSION['user_name'] = $_POST['user_name'];
+            
+            // Enviar el código de verificación al correo del usuario
+            $mail = new PHPMailer(true);
+            try {
+                $mail->isSMTP();
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                $mail->Username = 'u1979279@campus.udg.edu';
+                $mail->Password = 'jejg blkv aubg gsdw';
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port = 465;
+
+                $mail->setFrom('no-reply@tu-dominio.com', 'Nombre de tu App');
+                $mail->addAddress($_POST['user_name']);
+                $mail->Subject = "Codi de verificació d'inici de sessió";
+                $mail->Body = "Hola,\n\nEl teu codi de verificació és: " . $verification_code . "\n";
+                
+                $mail->send();
+                
+                $configuration['{FEEDBACK}'] = 'Codi de verificació enviat. Revisa la teva bandeja d’entrada.';
+                header('Location: /?page=verify2FA'); // Redirige a la página de verificación
+                exit();
+            } catch (Exception $e) {
+                $configuration['{FEEDBACK}'] = '<mark>ERROR: No se pudo enviar el correo de verificación. ' . $mail->ErrorInfo . '</mark>';
+            }
         } else {
-            $configuration['{FEEDBACK}'] = '<mark>ERROR: Constrasenya incorrecta</mark>';
+            $configuration['{FEEDBACK}'] = '<mark>ERROR: Contraseña incorrecta.</mark>';
         }
     } else {
-        $configuration['{FEEDBACK}'] = '<mark>ERROR: Usuari desconegut </mark>';
+        $configuration['{FEEDBACK}'] = '<mark>ERROR: Usuario desconocido.</mark>';
     }
-} else if (isset($_POST['forgotten'])) {
+}
+else if (isset($_POST['verify_code'])) {
+    // Verifica si el código ingresado coincide con el de la sesión
+    if ($_POST['verification_code'] == $_SESSION['verification_code']) {
+        // Establece la sesión o cookie de usuario y redirige a la página logueada
+        setcookie('user', $_SESSION['user_name'], time() + (86400 * 30), "/");
+        $configuration['{FEEDBACK}'] = 'Sessió iniciada correctament com <b>' . htmlentities($_SESSION['user_name']) . '</b>';
+        $configuration['{LOGIN_LOGOUT_TEXT}'] = 'Tancar "sessió"';
+        $configuration['{LOGIN_LOGOUT_URL}'] = '/?page=logout';
+        
+        unset($_SESSION['verification_code']); // Limpia el código de verificación de la sesión
+        $template = 'plantilla_loged';
+    } else {
+        $configuration['{FEEDBACK}'] = '<mark>ERROR: Codi de verificació incorrecte.</mark>';
+    }
+}
+ else if (isset($_POST['forgotten'])) {
     $db = new PDO($db_connection);
     $sql = 'SELECT * FROM users WHERE user_name = :user_name';
     $query = $db->prepare($sql);
