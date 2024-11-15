@@ -91,7 +91,8 @@ switch ($action) {
             $stmt->bindValue(':bullets', $bullets);
             $stmt->execute();
         }
-        $stmt = $db->prepare('SELECT * FROM game_collisions WHERE game_id = :game_id  AND (strftime("%s", "now") - strftime("%s", timeCollide)) > 5');
+        // temps a 1 segon
+        $stmt = $db->prepare('SELECT * FROM game_collisions WHERE game_id = :game_id  AND (strftime("%s", "now") - strftime("%s", timeCollide)) > 1');
         $stmt->bindValue(':game_id', $game_id);
         $stmt->execute();
         $collisions = $stmt->fetchAll(PDO::FETCH_ASSOC);
