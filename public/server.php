@@ -21,7 +21,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
 
 switch ($action) {
     case 'join':
-        if (!isset($_SESSION['player_id'])) {
+        if (!isset($_SESSION['player_id']) || $_GET['reset'] === 'true') {
             $_SESSION['player_id'] = uniqid();
         }
 

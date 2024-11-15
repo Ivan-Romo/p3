@@ -1,6 +1,9 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
+document.getElementById('restartGameButton').addEventListener('click', restartGame);
+
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -97,9 +100,11 @@ function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawPlayer(player);
   player.bullets.forEach(drawBullet);
+  console.log("player id interno: " + player.id)
 
   Object.values(otherPlayers).forEach(playerObj => {
-    if (playerObj.id !== player.id) {
+    console.log("player id servidor: " + playerObj.id)
+    if (playerObj.id != player.id) {
       drawPlayer(playerObj);
       playerObj.bullets.forEach(drawBullet);
     }
@@ -138,7 +143,6 @@ function updateBullets() {
     .then(data => {
 
       data.bullets.forEach(bulletData => {
-        console.log(bulletData.bullet_id);
 
         
         const bulletExists = player.bullets.some(b => b.id === bulletData.bullet_id);
@@ -223,6 +227,8 @@ function getGameState() {
     .then(data => {
       otherPlayers = data.otherPlayers;
 
+      console.log(otherPlayers);
+
       square = data.square;
 
       updateScores(data);
@@ -303,21 +309,34 @@ function cleanBullets() {
     });
 }
 
-function joinGame() {
-  fetch('server.php?action=join')
+function joinGame(reset = false) {
+  const resetQuery = reset ? '&reset=true' : '';
+  fetch(`server.php?action=join${resetQuery}`)
     .then(response => response.json())
     .then(data => {
-      playerId = data.playerId;
+      playerId = data.playerId; // Nuevo playerId
       gameId = data.gameId;
       player.id = playerId;
 
+      otherPlayers = {}; // Limpiar jugadores anteriores
+      player.bullets = []; // Limpiar balas anteriores
+
       setInterval(getGameState, 100); 
-      setInterval(updateBullets, 100);
-
-
+      setInterval(updateBullets, 100); 
       setInterval(sendGameState, 100);
       setInterval(cleanBullets, 200); 
     });
+}
+
+
+function restartGame() {
+  clearInterval(getGameState);
+  clearInterval(updateBullets);
+  clearInterval(sendGameState);
+  clearInterval(cleanBullets);
+
+  joinGame(true); // Reinicia y genera nuevas credenciales
+  gameLoop(); // Reinicia el bucle del juego
 }
 
 // Iniciar el juego
