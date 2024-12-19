@@ -321,10 +321,10 @@ function joinGame(reset = false) {
       otherPlayers = {}; // Limpiar jugadores anteriores
       player.bullets = []; // Limpiar balas anteriores
 
-      setInterval(getGameState, 100); 
-      setInterval(updateBullets, 100); 
-      setInterval(sendGameState, 100);
-      setInterval(cleanBullets, 200); 
+      setInterval(getGameState, 200); 
+      setInterval(updateBullets, 200); 
+      setInterval(sendGameState, 200);
+      setInterval(cleanBullets, 1000); 
     });
 }
 

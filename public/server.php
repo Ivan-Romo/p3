@@ -92,46 +92,93 @@ switch ($action) {
             $stmt->execute();
         }
         // temps a 1 segon
-        $stmt = $db->prepare('SELECT * FROM game_collisions WHERE game_id = :game_id  AND (strftime("%s", "now") - strftime("%s", timeCollide)) > 1');
+       
+        //logMessage("Ultimos 5 seg" . $fiveSecondsAgo);
+        $stmt = $db->prepare('SELECT * FROM game_collisions 
+                     WHERE game_id = :game_id 
+                     AND (:current_timestamp - timeCollide) > 5');
+        $currentTimestamp = microtime(true); // Tiempo actual con fracciones de segundo
+        //$fiveSecondsAgo = $currentTimestamp - 10;
         $stmt->bindValue(':game_id', $game_id);
+        $stmt->bindValue(':current_timestamp', $currentTimestamp);
         $stmt->execute();
+       // 
+        
         $collisions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       
         if (!empty($collisions)) {
-            $bulletsArray = [];
+            logMessage("Resultado de la query: " . print_r($collisions, true));
+        
+            $stmt = $db->prepare('
+            SELECT * 
+                FROM game_collisions 
+                WHERE game_id = :game_id
+                AND timeCollide = (
+                    SELECT MIN(timeCollide) 
+                    FROM game_collisions gc2 
+                    WHERE gc2.game_id = game_collisions.game_id 
+                    AND gc2.player_id = game_collisions.player_id
+                );
+            ');
+            $stmt->bindValue(':game_id', $game_id);
+            $stmt->execute();
+            $collisions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            logMessage("Colisiones de la partida: " . print_r($collisions, true));
+            //$currentTimestamp = microtime(true);  // Tiempo actual en el servidor
+            logMessage("Tiempo actual: " . $currentTimestamp);
             $totalWeight = 0;
+            $bulletsArray = [];
+            $winner = null; // Inicializar el ganador
+            $earliestTime = PHP_FLOAT_MAX;
         
             foreach ($collisions as $collision) {
-                $timeCollide = $collision['timeCollide'];
-                $latency = $collision['latency'];
+                logMessage($collision['latency']);
                 
-                //Assignem un pes a cada colsio
-                $weight = 1 / ($timeCollide + $latency);
-                $totalWeight += $weight;
-                
-                $bulletsArray[] = [
-                    'bullet_id' => $collision['bullet_id'],
-                    'player_id' => $collision['player_id'],
-                    'weight' => $weight
-                ];
-            }
-        
-            // Seleccionamos un ganador en función de los pesos
-            $random = mt_rand() / mt_getrandmax() * $totalWeight;
-            $currentWeight = 0;
-            foreach ($bulletsArray as $bullet) {
-                $currentWeight += $bullet['weight'];
-                if ($currentWeight >= $random) {
-                    $winner = $bullet;
-                    break;
+                // Ahora timeCollide ya es un DOUBLE, no necesitas strtotime
+                $timeCollide = floatval($collision['timeCollide']);  
+                logMessage("TimeCollide (DOUBLE): " . $timeCollide);
+            
+                // Ajustar por latencia (en segundos)
+                $latencyAdjustedTime = $timeCollide - ($collision['latency'] / 1000);
+                logMessage("Latencia ajustada (segundos con decimales): " . $latencyAdjustedTime);
+            
+                // Calcular la diferencia de tiempo
+                $timeDifference = $currentTimestamp - $latencyAdjustedTime;
+                logMessage("Diferencia de tiempo (segundos con decimales): " . $timeDifference);
+            
+                // Validar si está dentro de la ventana de 5 segundos
+                if ($timeDifference <= 6) {
+                    // Comparar para encontrar el tiempo más temprano
+                    if ($latencyAdjustedTime < $earliestTime) {
+                        $earliestTime = $latencyAdjustedTime;
+                        $winner = [
+                            'bullet_id' => $collision['bullet_id'],
+                            'player_id' => $collision['player_id']
+                        ];
+                    }
                 }
             }
-        
+            // logMessage("pes total " . $totalWeight);
+            // // Selección del ganador basada en los pesos
+            // $random = mt_rand() / mt_getrandmax() * $totalWeight;
+            // logMessage("aquest es el pes a superar " . $random);
+            // $currentWeight = 0;
+            // foreach ($bulletsArray as $bullet) {
+            //     $currentWeight += $bullet['weight'];
+            //     if ($currentWeight >= $random) {
+            //         logMessage("entroo");
+            //         $winner = $bullet;
+            //         break;
+            //     }
+            // }
+            logMessage("pes final " . $currentWeight);
+            logMessage("aquesta es la bala guanyadora " . $winner);
             // Actualización de puntaje y posicionamiento del nuevo cuadrado
             $stmt = $db->prepare('UPDATE players SET score = score + 1 WHERE game_id = :game_id AND player_id = :player_id');
             $stmt->bindValue(':game_id', $game_id);
             $stmt->bindValue(':player_id', $winner['player_id']);
             $stmt->execute();
-        
+            logMessage("Incrementando puntuación del jugador: " . $winner['player_id']);
             $stmt = $db->prepare('UPDATE squares SET is_visible = 0 WHERE game_id = :game_id');
             $stmt->bindValue(':game_id', $game_id);
             $stmt->execute();
@@ -143,7 +190,7 @@ switch ($action) {
             $stmt->bindValue(':y', $newSquareY);
             $stmt->bindValue(':game_id', $game_id);
             $stmt->execute();
-        
+            logMessage("ELimino les colisions");
             $stmt = $db->prepare('DELETE FROM game_collisions WHERE game_id = :game_id ');
             $stmt->bindValue(':game_id', $game_id);
             $stmt->execute();
@@ -215,10 +262,11 @@ switch ($action) {
                 if (sqrt(pow($newBulletX - $squareX, 2) + pow($newBulletY - $squareY, 2)) < 25) {
                     $possibleCollisions[] = $bullet;
                     $latency = isset($data['latency']) ? (int) $data['latency'] : null;
-
-                    $stmt = $db->prepare('INSERT INTO game_collisions (game_id, bullet_id, timeCollide, player_id, latency) VALUES (:game_id, :bullet_id, CURRENT_TIMESTAMP, :player_id, :latency)');
+                    $currentTime = microtime(true);
+                    $stmt = $db->prepare('INSERT INTO game_collisions (game_id, bullet_id, timeCollide, player_id, latency) VALUES (:game_id, :bullet_id, :timeCollide, :player_id, :latency)');
                     $stmt->bindValue(':game_id', $game_id);
                     $stmt->bindValue(':bullet_id', $bullet['bullet_id']);
+                    $stmt->bindValue(':timeCollide', $currentTime);
                     $stmt->bindValue(':player_id', $bullet['player_id']);
                     $stmt->bindValue(':latency', $latency);
                     $stmt->execute();
@@ -266,7 +314,7 @@ switch ($action) {
 
     case 'updateLatency':
 
-        logMessage("EPPP");
+        //logMessage("EPPP");
         $input = json_decode(file_get_contents('php://input'), true);
         $playerId = $input['playerId'];
         $gameId = $input['gameId'];
