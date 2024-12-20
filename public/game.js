@@ -100,10 +100,10 @@ function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawPlayer(player);
   player.bullets.forEach(drawBullet);
-  console.log("player id interno: " + player.id)
+  //console.log("player id interno: " + player.id)
 
   Object.values(otherPlayers).forEach(playerObj => {
-    console.log("player id servidor: " + playerObj.id)
+    //console.log("player id servidor: " + playerObj.id)
     if (playerObj.id != player.id) {
       drawPlayer(playerObj);
       playerObj.bullets.forEach(drawBullet);
@@ -121,9 +121,33 @@ function render() {
 }
 
 function updateScores(data) {
-  playerScore = data.otherPlayers[playerId].score;
-  enemyScore = Object.values(data.otherPlayers).find(p => p.id !== playerId).score;
+  //playerScore = data.otherPlayers[playerId].score;
+  //enemyScore = Object.values(data.otherPlayers).find(p => p.id !== playerId).score;
+
+  if (data && data.otherPlayers && data.otherPlayers[playerId]) {
+    playerScore = data.otherPlayers[playerId].score;
+    console.log(data.otherPlayers);
+    const enemies = []; // Recorre cada jugador en data.otherPlayers 
+    for (const id in data.otherPlayers) { // Convertir ambos valores a cadena y comparar 
+      if (id !== undefined && String(id) !== String(playerId)) { 
+        enemies.push(data.otherPlayers[id]);
+      }
+    }
+    const enemy = enemies.length > 0 ? enemies[0] : null
+    if (enemy) {
+      enemyScore = enemy.score;
+    } else {
+      enemyScore = 0; // No hay enemigos
+    }
+    if(playerScore>0 || enemyScore>0){
+      console.log("aa");
+    }
+    console.log(`Tu puntuación: ${playerScore}, Puntuación del enemigo: ${enemyScore}`);
+  } else {
+    console.error("Error al actualizar puntuaciones. Datos inválidos:", data);
+  }
 }
+
 
 
 let square = null; 
@@ -225,6 +249,7 @@ function getGameState() {
   fetch(`server.php?action=status&gameId=${gameId}`)
     .then(response => response.json())
     .then(data => {
+      //console.log(data);
       otherPlayers = data.otherPlayers;
 
       console.log(otherPlayers);

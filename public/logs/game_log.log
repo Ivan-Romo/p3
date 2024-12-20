@@ -1,48 +1,1270 @@
-[2024-12-19 00:50:27] Resultado de la query: Array
+[2024-12-19 21:56:13] Resultado de la query: Array
 (
     [0] => Array
         (
-            [game_id] => 67636d7de3f2a
-            [bullet_id] => 67636dcba879b
-            [timeCollide] => 1734569422.2215
-            [player_id] => 67636d7de3dda
+            [game_id] => 676496712b22a
+            [bullet_id] => 67649676a8b97
+            [timeCollide] => 1734645368.8437
+            [player_id] => 676496712b08a
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 21:56:13] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676496712b22a
+            [bullet_id] => 67649676a8b97
+            [timeCollide] => 1734645368.8437
+            [player_id] => 676496712b08a
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 21:56:13] Tiempo actual: 1734645373.8451
+[2024-12-19 21:56:13] 17
+[2024-12-19 21:56:13] TimeCollide (DOUBLE): 1734645368.8437
+[2024-12-19 21:56:13] Latencia ajustada (segundos con decimales): 1734645368.8267
+[2024-12-19 21:56:13] Diferencia de tiempo (segundos con decimales): 5.0184459686279
+[2024-12-19 21:56:13] pes final 
+[2024-12-19 21:56:13] aquesta es la bala guanyadora Array
+[2024-12-19 21:56:13] Incrementando puntuación del jugador: 676496712b08a
+[2024-12-19 21:56:13] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676496712b22a
+            [bullet_id] => 67649676a8b97
+            [timeCollide] => 1734645368.8437
+            [player_id] => 676496712b08a
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 21:56:13] ELimino les colisions
+[2024-12-19 22:07:32] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 6764991eb837d
+            [timeCollide] => 1734646047.7593
+            [player_id] => 676499186acce
+            [latency] => 8
+        )
+
+)
+
+[2024-12-19 22:07:32] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 6764991eb837d
+            [timeCollide] => 1734646047.7593
+            [player_id] => 676499186acce
+            [latency] => 8
+        )
+
+)
+
+[2024-12-19 22:07:32] Tiempo actual: 1734646052.8566
+[2024-12-19 22:07:32] 8
+[2024-12-19 22:07:32] TimeCollide (DOUBLE): 1734646047.7593
+[2024-12-19 22:07:32] Latencia ajustada (segundos con decimales): 1734646047.7513
+[2024-12-19 22:07:32] Diferencia de tiempo (segundos con decimales): 5.1052808761597
+[2024-12-19 22:07:32] pes final 
+[2024-12-19 22:07:32] aquesta es la bala guanyadora Array
+[2024-12-19 22:07:32] Incrementando puntuación del jugador: 676499186acce
+[2024-12-19 22:07:32] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 6764991eb837d
+            [timeCollide] => 1734646047.7593
+            [player_id] => 676499186acce
+            [latency] => 8
+        )
+
+)
+
+[2024-12-19 22:07:32] ELimino les colisions
+[2024-12-19 22:10:03] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 676499b4e2eec
+            [timeCollide] => 1734646198.8614
+            [player_id] => 67649915cd469
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 22:10:03] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 676499b4e2eec
+            [timeCollide] => 1734646198.8614
+            [player_id] => 67649915cd469
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 22:10:03] Tiempo actual: 1734646203.8635
+[2024-12-19 22:10:03] 17
+[2024-12-19 22:10:03] TimeCollide (DOUBLE): 1734646198.8614
+[2024-12-19 22:10:03] Latencia ajustada (segundos con decimales): 1734646198.8444
+[2024-12-19 22:10:03] Diferencia de tiempo (segundos con decimales): 5.0190570354462
+[2024-12-19 22:10:03] pes final 
+[2024-12-19 22:10:03] aquesta es la bala guanyadora Array
+[2024-12-19 22:10:03] Incrementando puntuación del jugador: 67649915cd469
+[2024-12-19 22:10:03] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 676499b4e2eec
+            [timeCollide] => 1734646198.8614
+            [player_id] => 67649915cd469
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 22:10:03] ELimino les colisions
+[2024-12-19 22:10:20] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649915cd580
+            [bullet_id] => 676499c4cdd8f
+            [timeCollide] => 1734646215.0622
+            [player_id] => 67649915cd469
             [latency] => 18
         )
 
 )
 
-[2024-12-19 00:50:27] Colisiones de la partida: Array
+[2024-12-19 22:10:20] Colisiones de la partida: Array
 (
     [0] => Array
         (
-            [game_id] => 67636d7de3f2a
-            [bullet_id] => 67636dcba879b
-            [timeCollide] => 1734569422.2215
-            [player_id] => 67636d7de3dda
+            [game_id] => 67649915cd580
+            [bullet_id] => 676499c4cdd8f
+            [timeCollide] => 1734646215.0622
+            [player_id] => 67649915cd469
             [latency] => 18
         )
 
-    [1] => Array
+)
+
+[2024-12-19 22:10:20] Tiempo actual: 1734646220.0686
+[2024-12-19 22:10:20] 18
+[2024-12-19 22:10:20] TimeCollide (DOUBLE): 1734646215.0622
+[2024-12-19 22:10:20] Latencia ajustada (segundos con decimales): 1734646215.0442
+[2024-12-19 22:10:20] Diferencia de tiempo (segundos con decimales): 5.0243518352509
+[2024-12-19 22:10:20] pes final 
+[2024-12-19 22:10:20] aquesta es la bala guanyadora Array
+[2024-12-19 22:10:20] Incrementando puntuación del jugador: 67649915cd469
+[2024-12-19 22:10:20] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
         (
-            [game_id] => 67636d7de3f2a
-            [bullet_id] => 67636dcd22f20
-            [timeCollide] => 1734569423.5305
-            [player_id] => 67636d8117c63
+            [game_id] => 67649915cd580
+            [bullet_id] => 676499c4cdd8f
+            [timeCollide] => 1734646215.0622
+            [player_id] => 67649915cd469
+            [latency] => 18
+        )
+
+)
+
+[2024-12-19 22:10:20] ELimino les colisions
+[2024-12-19 22:11:04] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 676499f212e77
+            [timeCollide] => 1734646258.8937
+            [player_id] => 676499eca0945
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:11:04] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 676499f212e77
+            [timeCollide] => 1734646258.8937
+            [player_id] => 676499eca0945
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:11:04] Tiempo actual: 1734646264.0362
+[2024-12-19 22:11:04] 7
+[2024-12-19 22:11:04] TimeCollide (DOUBLE): 1734646258.8937
+[2024-12-19 22:11:04] Latencia ajustada (segundos con decimales): 1734646258.8867
+[2024-12-19 22:11:04] Diferencia de tiempo (segundos con decimales): 5.1495480537415
+[2024-12-19 22:11:04] pes final 
+[2024-12-19 22:11:04] aquesta es la bala guanyadora Array
+[2024-12-19 22:11:04] Incrementando puntuación del jugador: 676499eca0945
+[2024-12-19 22:11:04] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 676499f212e77
+            [timeCollide] => 1734646258.8937
+            [player_id] => 676499eca0945
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:11:04] ELimino les colisions
+[2024-12-19 22:11:58] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 67649a27a5854
+            [timeCollide] => 1734646313.4346
+            [player_id] => 676499ee35960
+            [latency] => 15
+        )
+
+)
+
+[2024-12-19 22:11:58] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 67649a27a5854
+            [timeCollide] => 1734646313.4346
+            [player_id] => 676499ee35960
+            [latency] => 15
+        )
+
+)
+
+[2024-12-19 22:11:58] Tiempo actual: 1734646318.4393
+[2024-12-19 22:11:58] 15
+[2024-12-19 22:11:58] TimeCollide (DOUBLE): 1734646313.4346
+[2024-12-19 22:11:58] Latencia ajustada (segundos con decimales): 1734646313.4196
+[2024-12-19 22:11:58] Diferencia de tiempo (segundos con decimales): 5.0197250843048
+[2024-12-19 22:11:58] pes final 
+[2024-12-19 22:11:58] aquesta es la bala guanyadora Array
+[2024-12-19 22:11:58] Incrementando puntuación del jugador: 676499ee35960
+[2024-12-19 22:11:58] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 67649a27a5854
+            [timeCollide] => 1734646313.4346
+            [player_id] => 676499ee35960
+            [latency] => 15
+        )
+
+)
+
+[2024-12-19 22:11:58] ELimino les colisions
+[2024-12-19 22:12:51] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 67649a5c17723
+            [timeCollide] => 1734646366.4329
+            [player_id] => 676499ee35960
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 22:12:51] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 67649a5c17723
+            [timeCollide] => 1734646366.4329
+            [player_id] => 676499ee35960
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 22:12:51] Tiempo actual: 1734646371.4396
+[2024-12-19 22:12:51] 17
+[2024-12-19 22:12:51] TimeCollide (DOUBLE): 1734646366.4329
+[2024-12-19 22:12:51] Latencia ajustada (segundos con decimales): 1734646366.4159
+[2024-12-19 22:12:51] Diferencia de tiempo (segundos con decimales): 5.0237491130829
+[2024-12-19 22:12:51] pes final 
+[2024-12-19 22:12:51] aquesta es la bala guanyadora Array
+[2024-12-19 22:12:51] Incrementando puntuación del jugador: 676499ee35960
+[2024-12-19 22:12:51] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 676499eca0a61
+            [bullet_id] => 67649a5c17723
+            [timeCollide] => 1734646366.4329
+            [player_id] => 676499ee35960
+            [latency] => 17
+        )
+
+)
+
+[2024-12-19 22:12:51] ELimino les colisions
+[2024-12-19 22:15:57] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649b069ff54
+            [bullet_id] => 67649b17a1bc7
+            [timeCollide] => 1734646552.6764
+            [player_id] => 67649b069fe31
+            [latency] => 15
+        )
+
+)
+
+[2024-12-19 22:15:57] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649b069ff54
+            [bullet_id] => 67649b17a1bc7
+            [timeCollide] => 1734646552.6764
+            [player_id] => 67649b069fe31
+            [latency] => 15
+        )
+
+)
+
+[2024-12-19 22:15:57] Tiempo actual: 1734646557.6803
+[2024-12-19 22:15:57] 15
+[2024-12-19 22:15:57] TimeCollide (DOUBLE): 1734646552.6764
+[2024-12-19 22:15:57] Latencia ajustada (segundos con decimales): 1734646552.6614
+[2024-12-19 22:15:57] Diferencia de tiempo (segundos con decimales): 5.0188822746277
+[2024-12-19 22:15:57] pes final 
+[2024-12-19 22:15:57] aquesta es la bala guanyadora Array
+[2024-12-19 22:15:57] Incrementando puntuación del jugador: 67649b069fe31
+[2024-12-19 22:15:57] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649b069ff54
+            [bullet_id] => 67649b17a1bc7
+            [timeCollide] => 1734646552.6764
+            [player_id] => 67649b069fe31
+            [latency] => 15
+        )
+
+)
+
+[2024-12-19 22:15:57] ELimino les colisions
+[2024-12-19 22:28:33] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649dd46235f
+            [bullet_id] => 67649e0b85255
+            [timeCollide] => 1734647308.7999
+            [player_id] => 67649dd5ed7ed
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:28:33] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649dd46235f
+            [bullet_id] => 67649e0b85255
+            [timeCollide] => 1734647308.7999
+            [player_id] => 67649dd5ed7ed
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:28:33] Tiempo actual: 1734647313.822
+[2024-12-19 22:28:33] 7
+[2024-12-19 22:28:33] TimeCollide (DOUBLE): 1734647308.7999
+[2024-12-19 22:28:33] Latencia ajustada (segundos con decimales): 1734647308.7929
+[2024-12-19 22:28:33] Diferencia de tiempo (segundos con decimales): 5.0291378498077
+[2024-12-19 22:28:33] pes final 
+[2024-12-19 22:28:33] aquesta es la bala guanyadora Array
+[2024-12-19 22:28:33] Incrementando puntuación del jugador: 67649dd5ed7ed
+[2024-12-19 22:28:33] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649dd46235f
+            [bullet_id] => 67649e0b85255
+            [timeCollide] => 1734647308.7999
+            [player_id] => 67649dd5ed7ed
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:28:33] ELimino les colisions
+[2024-12-19 22:31:06] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649e9deb67d
+            [bullet_id] => 67649ea3b6695
+            [timeCollide] => 1734647461.0992
+            [player_id] => 67649ea040f04
+            [latency] => 6
+        )
+
+)
+
+[2024-12-19 22:31:06] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649e9deb67d
+            [bullet_id] => 67649ea3b6695
+            [timeCollide] => 1734647461.0992
+            [player_id] => 67649ea040f04
+            [latency] => 6
+        )
+
+)
+
+[2024-12-19 22:31:06] Tiempo actual: 1734647466.2954
+[2024-12-19 22:31:06] 6
+[2024-12-19 22:31:06] TimeCollide (DOUBLE): 1734647461.0992
+[2024-12-19 22:31:06] Latencia ajustada (segundos con decimales): 1734647461.0932
+[2024-12-19 22:31:06] Diferencia de tiempo (segundos con decimales): 5.2022140026093
+[2024-12-19 22:31:06] pes final 
+[2024-12-19 22:31:06] aquesta es la bala guanyadora Array
+[2024-12-19 22:31:06] Incrementando puntuación del jugador: 67649ea040f04
+[2024-12-19 22:31:06] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649e9deb67d
+            [bullet_id] => 67649ea3b6695
+            [timeCollide] => 1734647461.0992
+            [player_id] => 67649ea040f04
+            [latency] => 6
+        )
+
+)
+
+[2024-12-19 22:31:06] ELimino les colisions
+[2024-12-19 22:32:30] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649eeaaea99
+            [bullet_id] => 67649ef883bf4
+            [timeCollide] => 1734647545.9013
+            [player_id] => 67649eed75da2
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:32:30] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649eeaaea99
+            [bullet_id] => 67649ef883bf4
+            [timeCollide] => 1734647545.9013
+            [player_id] => 67649eed75da2
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:32:30] Tiempo actual: 1734647550.9165
+[2024-12-19 22:32:30] 7
+[2024-12-19 22:32:30] TimeCollide (DOUBLE): 1734647545.9013
+[2024-12-19 22:32:30] Latencia ajustada (segundos con decimales): 1734647545.8943
+[2024-12-19 22:32:30] Diferencia de tiempo (segundos con decimales): 5.0221819877625
+[2024-12-19 22:32:30] pes final 
+[2024-12-19 22:32:30] aquesta es la bala guanyadora Array
+[2024-12-19 22:32:30] Incrementando puntuación del jugador: 67649eed75da2
+[2024-12-19 22:32:30] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 67649eeaaea99
+            [bullet_id] => 67649ef883bf4
+            [timeCollide] => 1734647545.9013
+            [player_id] => 67649eed75da2
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 22:32:30] ELimino les colisions
+[2024-12-19 23:20:06] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa12bb050
+            [bullet_id] => 6764aa1fe02e2
+            [timeCollide] => 1734650401.9525
+            [player_id] => 6764aa148e476
+            [latency] => 23
+        )
+
+)
+
+[2024-12-19 23:20:06] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa12bb050
+            [bullet_id] => 6764aa1fe02e2
+            [timeCollide] => 1734650401.9525
+            [player_id] => 6764aa148e476
+            [latency] => 23
+        )
+
+)
+
+[2024-12-19 23:20:06] Tiempo actual: 1734650406.9901
+[2024-12-19 23:20:06] 23
+[2024-12-19 23:20:06] TimeCollide (DOUBLE): 1734650401.9525
+[2024-12-19 23:20:06] Latencia ajustada (segundos con decimales): 1734650401.9295
+[2024-12-19 23:20:06] Diferencia de tiempo (segundos con decimales): 5.0606138706207
+[2024-12-19 23:20:06] pes final 
+[2024-12-19 23:20:06] aquesta es la bala guanyadora Array
+[2024-12-19 23:20:06] Incrementando puntuación del jugador: 6764aa148e476
+[2024-12-19 23:20:07] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa12bb050
+            [bullet_id] => 6764aa1fe02e2
+            [timeCollide] => 1734650401.9525
+            [player_id] => 6764aa148e476
+            [latency] => 23
+        )
+
+)
+
+[2024-12-19 23:20:07] ELimino les colisions
+[2024-12-19 23:20:49] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa3f1ab14
+            [bullet_id] => 6764aa492002d
+            [timeCollide] => 1734650444.1313
+            [player_id] => 6764aa411cf2f
             [latency] => 11
         )
 
 )
 
-[2024-12-19 00:50:27] Tiempo actual: 1734569427.2418
-[2024-12-19 00:50:27] 18
-[2024-12-19 00:50:27] TimeCollide (DOUBLE): 1734569422.2215
-[2024-12-19 00:50:27] Latencia ajustada (segundos con decimales): 1734569422.2035
-[2024-12-19 00:50:27] Diferencia de tiempo (segundos con decimales): 5.0382950305939
-[2024-12-19 00:50:27] 11
-[2024-12-19 00:50:27] TimeCollide (DOUBLE): 1734569423.5305
-[2024-12-19 00:50:27] Latencia ajustada (segundos con decimales): 1734569423.5195
-[2024-12-19 00:50:27] Diferencia de tiempo (segundos con decimales): 3.7222950458527
-[2024-12-19 00:50:27] pes final 
-[2024-12-19 00:50:27] aquesta es la bala guanyadora Array
-[2024-12-19 00:50:27] Incrementando puntuación del jugador: 67636d7de3dda
-[2024-12-19 00:50:27] ELimino les colisions
+[2024-12-19 23:20:49] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa3f1ab14
+            [bullet_id] => 6764aa492002d
+            [timeCollide] => 1734650444.1313
+            [player_id] => 6764aa411cf2f
+            [latency] => 11
+        )
+
+)
+
+[2024-12-19 23:20:49] Tiempo actual: 1734650449.1366
+[2024-12-19 23:20:49] 11
+[2024-12-19 23:20:49] TimeCollide (DOUBLE): 1734650444.1313
+[2024-12-19 23:20:49] Latencia ajustada (segundos con decimales): 1734650444.1203
+[2024-12-19 23:20:49] Diferencia de tiempo (segundos con decimales): 5.0163040161133
+[2024-12-19 23:20:49] pes final 
+[2024-12-19 23:20:49] aquesta es la bala guanyadora Array
+[2024-12-19 23:20:49] Incrementando puntuación del jugador: 6764aa411cf2f
+[2024-12-19 23:20:49] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa3f1ab14
+            [bullet_id] => 6764aa492002d
+            [timeCollide] => 1734650444.1313
+            [player_id] => 6764aa411cf2f
+            [latency] => 11
+        )
+
+)
+
+[2024-12-19 23:20:49] ELimino les colisions
+[2024-12-19 23:21:09] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa53977de
+            [bullet_id] => 6764aa5e7fd71
+            [timeCollide] => 1734650464.023
+            [player_id] => 6764aa5529a1d
+            [latency] => 19
+        )
+
+)
+
+[2024-12-19 23:21:09] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa53977de
+            [bullet_id] => 6764aa5e7fd71
+            [timeCollide] => 1734650464.023
+            [player_id] => 6764aa5529a1d
+            [latency] => 19
+        )
+
+)
+
+[2024-12-19 23:21:09] Tiempo actual: 1734650469.0467
+[2024-12-19 23:21:09] 19
+[2024-12-19 23:21:09] TimeCollide (DOUBLE): 1734650464.023
+[2024-12-19 23:21:09] Latencia ajustada (segundos con decimales): 1734650464.004
+[2024-12-19 23:21:09] Diferencia de tiempo (segundos con decimales): 5.0427160263062
+[2024-12-19 23:21:09] pes final 
+[2024-12-19 23:21:09] aquesta es la bala guanyadora Array
+[2024-12-19 23:21:09] Incrementando puntuación del jugador: 6764aa5529a1d
+[2024-12-19 23:21:09] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764aa53977de
+            [bullet_id] => 6764aa5e7fd71
+            [timeCollide] => 1734650464.023
+            [player_id] => 6764aa5529a1d
+            [latency] => 19
+        )
+
+)
+
+[2024-12-19 23:21:09] ELimino les colisions
+[2024-12-19 23:24:39] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ab16a7540
+            [bullet_id] => 6764ab30bc33e
+            [timeCollide] => 1734650674.1789
+            [player_id] => 6764ab16a7367
+            [latency] => 8
+        )
+
+)
+
+[2024-12-19 23:24:39] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ab16a7540
+            [bullet_id] => 6764ab30bc33e
+            [timeCollide] => 1734650674.1789
+            [player_id] => 6764ab16a7367
+            [latency] => 8
+        )
+
+)
+
+[2024-12-19 23:24:39] Tiempo actual: 1734650679.3093
+[2024-12-19 23:24:39] 8
+[2024-12-19 23:24:39] TimeCollide (DOUBLE): 1734650674.1789
+[2024-12-19 23:24:39] Latencia ajustada (segundos con decimales): 1734650674.1709
+[2024-12-19 23:24:39] Diferencia de tiempo (segundos con decimales): 5.1384348869324
+[2024-12-19 23:24:39] pes final 
+[2024-12-19 23:24:39] aquesta es la bala guanyadora Array
+[2024-12-19 23:24:39] Incrementando puntuación del jugador: 6764ab16a7367
+[2024-12-19 23:24:39] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ab16a7540
+            [bullet_id] => 6764ab30bc33e
+            [timeCollide] => 1734650674.1789
+            [player_id] => 6764ab16a7367
+            [latency] => 8
+        )
+
+)
+
+[2024-12-19 23:24:39] ELimino les colisions
+[2024-12-19 23:25:29] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ab591662f
+            [bullet_id] => 6764ab6202ba0
+            [timeCollide] => 1734650724.0578
+            [player_id] => 6764ab591651f
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 23:25:29] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ab591662f
+            [bullet_id] => 6764ab6202ba0
+            [timeCollide] => 1734650724.0578
+            [player_id] => 6764ab591651f
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 23:25:29] Tiempo actual: 1734650729.0605
+[2024-12-19 23:25:29] 7
+[2024-12-19 23:25:29] TimeCollide (DOUBLE): 1734650724.0578
+[2024-12-19 23:25:29] Latencia ajustada (segundos con decimales): 1734650724.0508
+[2024-12-19 23:25:29] Diferencia de tiempo (segundos con decimales): 5.0096919536591
+[2024-12-19 23:25:29] pes final 
+[2024-12-19 23:25:29] aquesta es la bala guanyadora Array
+[2024-12-19 23:25:29] Incrementando puntuación del jugador: 6764ab591651f
+[2024-12-19 23:25:29] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ab591662f
+            [bullet_id] => 6764ab6202ba0
+            [timeCollide] => 1734650724.0578
+            [player_id] => 6764ab591651f
+            [latency] => 7
+        )
+
+)
+
+[2024-12-19 23:25:29] ELimino les colisions
+[2024-12-19 23:33:53] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ad4edc499
+            [bullet_id] => 6764ad5b55439
+            [timeCollide] => 1734651228.5728
+            [player_id] => 6764ad50a8a4c
+            [latency] => 19
+        )
+
+)
+
+[2024-12-19 23:33:53] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ad4edc499
+            [bullet_id] => 6764ad5b55439
+            [timeCollide] => 1734651228.5728
+            [player_id] => 6764ad50a8a4c
+            [latency] => 19
+        )
+
+)
+
+[2024-12-19 23:33:53] Tiempo actual: 1734651233.5748
+[2024-12-19 23:33:53] 19
+[2024-12-19 23:33:53] TimeCollide (DOUBLE): 1734651228.5728
+[2024-12-19 23:33:53] Latencia ajustada (segundos con decimales): 1734651228.5538
+[2024-12-19 23:33:53] Diferencia de tiempo (segundos con decimales): 5.0210361480713
+[2024-12-19 23:33:53] pes final 
+[2024-12-19 23:33:53] aquesta es la bala guanyadora Array
+[2024-12-19 23:33:53] Incrementando puntuación del jugador: 6764ad50a8a4c
+[2024-12-19 23:33:53] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ad4edc499
+            [bullet_id] => 6764ad5b55439
+            [timeCollide] => 1734651228.5728
+            [player_id] => 6764ad50a8a4c
+            [latency] => 19
+        )
+
+)
+
+[2024-12-19 23:33:53] ELimino les colisions
+[2024-12-19 23:37:02] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ad4edc499
+            [bullet_id] => 6764ae172449e
+            [timeCollide] => 1734651417.1247
+            [player_id] => 6764ad4edc359
+            [latency] => 9
+        )
+
+)
+
+[2024-12-19 23:37:02] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ad4edc499
+            [bullet_id] => 6764ae172449e
+            [timeCollide] => 1734651417.1247
+            [player_id] => 6764ad4edc359
+            [latency] => 9
+        )
+
+)
+
+[2024-12-19 23:37:02] Tiempo actual: 1734651422.3256
+[2024-12-19 23:37:02] 9
+[2024-12-19 23:37:02] TimeCollide (DOUBLE): 1734651417.1247
+[2024-12-19 23:37:02] Latencia ajustada (segundos con decimales): 1734651417.1157
+[2024-12-19 23:37:02] Diferencia de tiempo (segundos con decimales): 5.2099180221558
+[2024-12-19 23:37:02] pes final 
+[2024-12-19 23:37:02] aquesta es la bala guanyadora Array
+[2024-12-19 23:37:02] Incrementando puntuación del jugador: 6764ad4edc359
+[2024-12-19 23:37:02] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764ad4edc499
+            [bullet_id] => 6764ae172449e
+            [timeCollide] => 1734651417.1247
+            [player_id] => 6764ad4edc359
+            [latency] => 9
+        )
+
+)
+
+[2024-12-19 23:37:02] ELimino les colisions
+[2024-12-19 23:47:52] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b09e34046
+            [bullet_id] => 6764b0a2c23ac
+            [timeCollide] => 1734652067.6048
+            [player_id] => 6764b09f8ee0b
+            [latency] => 11
+        )
+
+)
+
+[2024-12-19 23:47:52] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b09e34046
+            [bullet_id] => 6764b0a2c23ac
+            [timeCollide] => 1734652067.6048
+            [player_id] => 6764b09f8ee0b
+            [latency] => 11
+        )
+
+)
+
+[2024-12-19 23:47:52] Tiempo actual: 1734652072.6144
+[2024-12-19 23:47:52] 11
+[2024-12-19 23:47:52] TimeCollide (DOUBLE): 1734652067.6048
+[2024-12-19 23:47:52] Latencia ajustada (segundos con decimales): 1734652067.5938
+[2024-12-19 23:47:52] Diferencia de tiempo (segundos con decimales): 5.0205550193787
+[2024-12-19 23:47:52] pes final 
+[2024-12-19 23:47:52] aquesta es la bala guanyadora Array
+[2024-12-19 23:47:52] Incrementando puntuación del jugador: 6764b09f8ee0b
+[2024-12-19 23:47:52] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b09e34046
+            [bullet_id] => 6764b0a2c23ac
+            [timeCollide] => 1734652067.6048
+            [player_id] => 6764b09f8ee0b
+            [latency] => 11
+        )
+
+)
+
+[2024-12-19 23:47:52] ELimino les colisions
+[2024-12-19 23:59:23] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b341d52d8
+            [bullet_id] => 6764b35484f9d
+            [timeCollide] => 1734652757.921
+            [player_id] => 6764b341d5192
+            [latency] => 13
+        )
+
+)
+
+[2024-12-19 23:59:23] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b341d52d8
+            [bullet_id] => 6764b35484f9d
+            [timeCollide] => 1734652757.921
+            [player_id] => 6764b341d5192
+            [latency] => 13
+        )
+
+)
+
+[2024-12-19 23:59:23] Tiempo actual: 1734652763.0971
+[2024-12-19 23:59:23] 13
+[2024-12-19 23:59:23] TimeCollide (DOUBLE): 1734652757.921
+[2024-12-19 23:59:23] Latencia ajustada (segundos con decimales): 1734652757.908
+[2024-12-19 23:59:23] Diferencia de tiempo (segundos con decimales): 5.1891078948975
+[2024-12-19 23:59:23] pes final 
+[2024-12-19 23:59:23] aquesta es la bala guanyadora Array
+[2024-12-19 23:59:23] Incrementando puntuación del jugador: 6764b341d5192
+[2024-12-19 23:59:23] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b341d52d8
+            [bullet_id] => 6764b35484f9d
+            [timeCollide] => 1734652757.921
+            [player_id] => 6764b341d5192
+            [latency] => 13
+        )
+
+)
+
+[2024-12-19 23:59:23] ELimino les colisions
+[2024-12-20 00:07:31] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b53ded3dc
+            [timeCollide] => 1734653246.5478
+            [player_id] => 6764b521875a6
+            [latency] => 14
+        )
+
+)
+
+[2024-12-20 00:07:31] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b53ded3dc
+            [timeCollide] => 1734653246.5478
+            [player_id] => 6764b521875a6
+            [latency] => 14
+        )
+
+)
+
+[2024-12-20 00:07:31] Tiempo actual: 1734653251.5816
+[2024-12-20 00:07:31] 14
+[2024-12-20 00:07:31] TimeCollide (DOUBLE): 1734653246.5478
+[2024-12-20 00:07:31] Latencia ajustada (segundos con decimales): 1734653246.5338
+[2024-12-20 00:07:31] Diferencia de tiempo (segundos con decimales): 5.0478048324585
+[2024-12-20 00:07:31] pes final 
+[2024-12-20 00:07:31] aquesta es la bala guanyadora Array
+[2024-12-20 00:07:31] Incrementando puntuación del jugador: 6764b521875a6
+[2024-12-20 00:07:31] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b53ded3dc
+            [timeCollide] => 1734653246.5478
+            [player_id] => 6764b521875a6
+            [latency] => 14
+        )
+
+)
+
+[2024-12-20 00:07:31] ELimino les colisions
+[2024-12-20 00:08:22] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b57039f11
+            [timeCollide] => 1734653297.9771
+            [player_id] => 6764b51faddc9
+            [latency] => 14
+        )
+
+)
+
+[2024-12-20 00:08:22] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b57039f11
+            [timeCollide] => 1734653297.9771
+            [player_id] => 6764b51faddc9
+            [latency] => 14
+        )
+
+)
+
+[2024-12-20 00:08:22] Tiempo actual: 1734653302.9866
+[2024-12-20 00:08:22] 14
+[2024-12-20 00:08:22] TimeCollide (DOUBLE): 1734653297.9771
+[2024-12-20 00:08:22] Latencia ajustada (segundos con decimales): 1734653297.9631
+[2024-12-20 00:08:22] Diferencia de tiempo (segundos con decimales): 5.0234889984131
+[2024-12-20 00:08:22] pes final 
+[2024-12-20 00:08:22] aquesta es la bala guanyadora Array
+[2024-12-20 00:08:22] Incrementando puntuación del jugador: 6764b51faddc9
+[2024-12-20 00:08:23] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b57039f11
+            [timeCollide] => 1734653297.9771
+            [player_id] => 6764b51faddc9
+            [latency] => 14
+        )
+
+)
+
+[2024-12-20 00:08:23] ELimino les colisions
+[2024-12-20 00:08:31] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5794fb55
+            [timeCollide] => 1734653306.7419
+            [player_id] => 6764b51faddc9
+            [latency] => 7
+        )
+
+)
+
+[2024-12-20 00:08:31] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5794fb55
+            [timeCollide] => 1734653306.7419
+            [player_id] => 6764b51faddc9
+            [latency] => 7
+        )
+
+)
+
+[2024-12-20 00:08:31] Tiempo actual: 1734653311.7459
+[2024-12-20 00:08:31] 7
+[2024-12-20 00:08:31] TimeCollide (DOUBLE): 1734653306.7419
+[2024-12-20 00:08:31] Latencia ajustada (segundos con decimales): 1734653306.7349
+[2024-12-20 00:08:31] Diferencia de tiempo (segundos con decimales): 5.0110380649567
+[2024-12-20 00:08:31] pes final 
+[2024-12-20 00:08:31] aquesta es la bala guanyadora Array
+[2024-12-20 00:08:31] Incrementando puntuación del jugador: 6764b51faddc9
+[2024-12-20 00:08:31] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5794fb55
+            [timeCollide] => 1734653306.7419
+            [player_id] => 6764b51faddc9
+            [latency] => 7
+        )
+
+)
+
+[2024-12-20 00:08:31] ELimino les colisions
+[2024-12-20 00:08:41] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5831692a
+            [timeCollide] => 1734653316.3458
+            [player_id] => 6764b521875a6
+            [latency] => 27
+        )
+
+)
+
+[2024-12-20 00:08:41] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5831692a
+            [timeCollide] => 1734653316.3458
+            [player_id] => 6764b521875a6
+            [latency] => 27
+        )
+
+)
+
+[2024-12-20 00:08:41] Tiempo actual: 1734653321.3841
+[2024-12-20 00:08:41] 27
+[2024-12-20 00:08:41] TimeCollide (DOUBLE): 1734653316.3458
+[2024-12-20 00:08:41] Latencia ajustada (segundos con decimales): 1734653316.3188
+[2024-12-20 00:08:41] Diferencia de tiempo (segundos con decimales): 5.0653460025787
+[2024-12-20 00:08:41] pes final 
+[2024-12-20 00:08:41] aquesta es la bala guanyadora Array
+[2024-12-20 00:08:41] Incrementando puntuación del jugador: 6764b521875a6
+[2024-12-20 00:08:41] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5831692a
+            [timeCollide] => 1734653316.3458
+            [player_id] => 6764b521875a6
+            [latency] => 27
+        )
+
+)
+
+[2024-12-20 00:08:41] ELimino les colisions
+[2024-12-20 00:08:49] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b58bc4e24
+            [timeCollide] => 1734653324.5478
+            [player_id] => 6764b521875a6
+            [latency] => 9
+        )
+
+)
+
+[2024-12-20 00:08:49] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b58bc4e24
+            [timeCollide] => 1734653324.5478
+            [player_id] => 6764b521875a6
+            [latency] => 9
+        )
+
+)
+
+[2024-12-20 00:08:49] Tiempo actual: 1734653329.579
+[2024-12-20 00:08:49] 9
+[2024-12-20 00:08:49] TimeCollide (DOUBLE): 1734653324.5478
+[2024-12-20 00:08:49] Latencia ajustada (segundos con decimales): 1734653324.5388
+[2024-12-20 00:08:49] Diferencia de tiempo (segundos con decimales): 5.0402090549469
+[2024-12-20 00:08:49] pes final 
+[2024-12-20 00:08:49] aquesta es la bala guanyadora Array
+[2024-12-20 00:08:49] Incrementando puntuación del jugador: 6764b521875a6
+[2024-12-20 00:08:49] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b58bc4e24
+            [timeCollide] => 1734653324.5478
+            [player_id] => 6764b521875a6
+            [latency] => 9
+        )
+
+)
+
+[2024-12-20 00:08:49] ELimino les colisions
+[2024-12-20 00:08:56] Resultado de la query: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b59325651
+            [timeCollide] => 1734653331.7422
+            [player_id] => 6764b521875a6
+            [latency] => 13
+        )
+
+)
+
+[2024-12-20 00:08:56] Colisiones de la partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b59325651
+            [timeCollide] => 1734653331.7422
+            [player_id] => 6764b521875a6
+            [latency] => 13
+        )
+
+    [1] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5942c4cf
+            [timeCollide] => 1734653333.3428
+            [player_id] => 6764b51faddc9
+            [latency] => 10
+        )
+
+)
+
+[2024-12-20 00:08:56] Tiempo actual: 1734653336.7776
+[2024-12-20 00:08:56] 13
+[2024-12-20 00:08:56] TimeCollide (DOUBLE): 1734653331.7422
+[2024-12-20 00:08:56] Latencia ajustada (segundos con decimales): 1734653331.7292
+[2024-12-20 00:08:56] Diferencia de tiempo (segundos con decimales): 5.0484311580658
+[2024-12-20 00:08:56] 10
+[2024-12-20 00:08:56] TimeCollide (DOUBLE): 1734653333.3428
+[2024-12-20 00:08:56] Latencia ajustada (segundos con decimales): 1734653333.3328
+[2024-12-20 00:08:56] Diferencia de tiempo (segundos con decimales): 3.4448311328888
+[2024-12-20 00:08:56] pes final 
+[2024-12-20 00:08:56] aquesta es la bala guanyadora Array
+[2024-12-20 00:08:56] Incrementando puntuación del jugador: 6764b521875a6
+[2024-12-20 00:08:56] Colisiones abans de eliminar partida: Array
+(
+    [0] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b59325651
+            [timeCollide] => 1734653331.7422
+            [player_id] => 6764b521875a6
+            [latency] => 13
+        )
+
+    [1] => Array
+        (
+            [game_id] => 6764b51fadfa6
+            [bullet_id] => 6764b5942c4cf
+            [timeCollide] => 1734653333.3428
+            [player_id] => 6764b51faddc9
+            [latency] => 10
+        )
+
+)
+
+[2024-12-20 00:08:56] ELimino les colisions

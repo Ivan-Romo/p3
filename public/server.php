@@ -190,6 +190,24 @@ switch ($action) {
             $stmt->bindValue(':y', $newSquareY);
             $stmt->bindValue(':game_id', $game_id);
             $stmt->execute();
+            //TEST
+            $stmt = $db->prepare('
+            SELECT * 
+                FROM game_collisions 
+                WHERE game_id = :game_id
+                AND timeCollide = (
+                    SELECT MIN(timeCollide) 
+                    FROM game_collisions gc2 
+                    WHERE gc2.game_id = game_collisions.game_id 
+                    AND gc2.player_id = game_collisions.player_id
+                );
+            ');
+            $stmt->bindValue(':game_id', $game_id);
+            $stmt->execute();
+            $collisions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            logMessage("Colisiones abans de eliminar partida: " . print_r($collisions, true));
+
+
             logMessage("ELimino les colisions");
             $stmt = $db->prepare('DELETE FROM game_collisions WHERE game_id = :game_id ');
             $stmt->bindValue(':game_id', $game_id);
@@ -262,10 +280,10 @@ switch ($action) {
                 if (sqrt(pow($newBulletX - $squareX, 2) + pow($newBulletY - $squareY, 2)) < 25) {
                     $possibleCollisions[] = $bullet;
                     $latency = isset($data['latency']) ? (int) $data['latency'] : null;
-                    $currentTime = microtime(true);
                     $stmt = $db->prepare('INSERT INTO game_collisions (game_id, bullet_id, timeCollide, player_id, latency) VALUES (:game_id, :bullet_id, :timeCollide, :player_id, :latency)');
                     $stmt->bindValue(':game_id', $game_id);
                     $stmt->bindValue(':bullet_id', $bullet['bullet_id']);
+                    $currentTime = microtime(true);
                     $stmt->bindValue(':timeCollide', $currentTime);
                     $stmt->bindValue(':player_id', $bullet['player_id']);
                     $stmt->bindValue(':latency', $latency);
